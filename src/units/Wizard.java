@@ -6,8 +6,9 @@ public class Wizard extends Person{
     private int healPrice;
     private int attackPrice;
 
-    public Wizard(String name, int age){
-        super(name, 80,30,age, 5,30,"Stick", 40);
+    public Wizard(String name, int x, int y){
+        super(name, 80,30,25, 5,30,"Stick", 40,
+                "Волшебник", x, y);
         this.mana = 10;
         this.healPrice = 2;
         this.attackPrice = 1;
@@ -34,8 +35,4 @@ public class Wizard extends Person{
         return 0;
     }
 
-    @Override
-    public String toString(){
-        return super.name;
-    }
 }

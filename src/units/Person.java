@@ -9,9 +9,11 @@ public abstract class Person {
     protected int endurance;         // Выносливость
     protected int gold;
     protected String weapon;
+    protected Position position;
+    protected String className;
 
     public Person(String name, int health, int power, int age, int armor, int endurance,
-                  String weapon, int gold){
+                  String weapon, int gold, String className, int x, int y) {
         this.name = name;
         this.health = health;
         this.power = power;
@@ -20,7 +22,14 @@ public abstract class Person {
         this.endurance = endurance;
         this.weapon = weapon;
         this.gold = gold;
+        this.className = className;
+        this.position = new Position(x, y);
 
+    }
+
+    @Override
+    public String toString() {
+        return (className + " >>> " + name + " " + "(" + position.getX() + "," + position.getY() + ")");
     }
 }
 

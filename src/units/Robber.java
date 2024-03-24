@@ -3,8 +3,9 @@ package units;
 // Разбойник
 public class Robber extends Person {
 
-    public Robber(String name, int age) {
-        super(name, 100,10,age,20,40,"knife",50);
+    public Robber(String name, int x, int y) {
+        super(name, 100, 10, 25, 20, 40, "knife", 50,
+                "Разбойник", x,y);
     }
 
     public void attack(Person person) {
@@ -15,8 +16,7 @@ public class Robber extends Person {
         super.gold -= val;
     }
 
-    @Override
-    public String toString(){
-        return super.name;
-    }
+
+
+
 }

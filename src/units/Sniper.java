@@ -7,8 +7,9 @@ public class Sniper extends Person{
     boolean inGame = true;
 
 
-    public Sniper (String name, int age){
-        super(name, 60,40,age,20,30,"gun",40);
+    public Sniper (String name, int x, int y){
+        super(name, 60,40,25,20,30,"gun",40,
+                "Снайпер", x, y);
     }
 
     public void attack(Person person) {
@@ -19,8 +20,4 @@ public class Sniper extends Person{
         return this.arrowsNum == 0 ? false : true;
     }
 
-    @Override
-    public String toString(){
-        return super.name;
-    }
 }

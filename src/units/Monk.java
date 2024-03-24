@@ -6,8 +6,9 @@ public class Monk extends Person {
     private int healPrice;
 
 
-    public Monk(String name, int age) {
-        super(name, 60, 40, age, 20, 40, "nothing", 40);
+    public Monk(String name, int x, int y) {
+        super(name, 60, 40, 25, 20, 40, "nothing", 40,
+                "Монах", x, y);
     }
 
     public void heal(Person person, int val) {
@@ -25,8 +26,4 @@ public class Monk extends Person {
         return 0;
     }
 
-    @Override
-    public String toString(){
-        return super.name;
-    }
 }
