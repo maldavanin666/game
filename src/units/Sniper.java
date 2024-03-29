@@ -1,23 +1,20 @@
 package units;
 
+import packHero.Shooter;
+
+import java.util.ArrayList;
+
 //Снайпер
-public class Sniper extends Person{
+public class Sniper extends Shooter {
 
     private int arrowsNum;
     boolean inGame = true;
 
 
     public Sniper (String name, int x, int y){
-        super(name, 60,40,25,20,30,"gun",40,
+        super(name, 3, 60,15,40,25,20,30,"gun",40,
                 "Снайпер", x, y);
     }
 
-    public void attack(Person person) {
-        person.health -= super.power;
-    }
-
-    public boolean isInGame() {
-        return this.arrowsNum == 0 ? false : true;
-    }
 
 }

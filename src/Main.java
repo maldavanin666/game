@@ -1,24 +1,61 @@
+import packHero.Shooter;
 import units.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) {
-        hollyTeam = teamCreate(0, 0);
-        darkTeam = teamCreate(0, 3);
-        System.out.println(hollyTeam);
-        System.out.println();
-        System.out.println(darkTeam);
-    }
 
     public static ArrayList<Person> hollyTeam;
     public static ArrayList<Person> darkTeam;
+    public static ArrayList<Person> all = new ArrayList<>();
+
+    public static void main(String[] args) {
+        hollyTeam = teamCreate(0, 0);
+        darkTeam = teamCreate(0, 3);
+
+        all.addAll(hollyTeam);
+        all.addAll(darkTeam);
+        all.sort(new PriorityClass());
+
+        for (Person p : all){
+            System.out.println(p + " ходит" );
+            if (hollyTeam.contains(p)){
+                p.step(darkTeam);
+            } else {
+                p.step(hollyTeam);
+            }
+        }
+
+
+
+
+
+//        System.out.println(hollyTeam);
+//        System.out.println();
+//        System.out.println(darkTeam);
+
+
+        //Shooter.step();
+
+
+//        List<Person> listHero1 = new ArrayList<>();
+//        listHero1.add(new Crossbowman(fillName(), 0, 0));
+//
+//        ArrayList<Person> listHero = new ArrayList<>();
+//        listHero.add(new Crossbowman(fillName(), 0, 0));
+//        listHero1.get(0).step(listHero);
+//        System.out.println((Crossbowman)(listHero1.get(0).));
+    }
+
+
 
     private static ArrayList<Person> teamCreate(int val, int num) {
         ArrayList<Person> team = new ArrayList<>();
         int teamCount = 10;
         for (int i = 0; i < teamCount; i++) {
+
             switch (new Random().nextInt(4) + num) {
                 case 0:
                     team.add(new Crossbowman(fillName(), 0, i));
@@ -47,9 +84,14 @@ public class Main {
         return team;
     }
 
+    //private void
+
     private static String fillName() {
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length - 1)]);
     }
+
+
+
 
 
 }

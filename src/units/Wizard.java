@@ -1,38 +1,22 @@
 package units;
 
-public class Wizard extends Person{
+import packHero.Magic;
+
+import java.util.ArrayList;
+
+public class Wizard extends Magic {
+
     private int mana;
-    private int healVal;
     private int healPrice;
     private int attackPrice;
 
     public Wizard(String name, int x, int y){
-        super(name, 80,30,25, 5,30,"Stick", 40,
+        super(name, 1, 80,7,30,25, 5,30,"Stick", 40,
                 "Волшебник", x, y);
         this.mana = 10;
         this.healPrice = 2;
         this.attackPrice = 1;
     }
 
-    public void attack(Person person) {
-        person.health -= this.power;
-        this.mana -= price("attack");
-    }
-
-    public void heal(Person person, int val){
-        person.health += val;
-        this.mana -= price("heal");
-    }
-
-    public void heal(){
-        super.health += this.healVal;
-        this.mana -= this.healPrice;
-    }
-
-    private int price(String action){
-        if (action == "heal") return healPrice;
-        else if (action == "attack") return attackPrice;
-        return 0;
-    }
 
 }

@@ -1,13 +1,17 @@
 package units;
 
-public class Monk extends Person {
+import packHero.Magic;
+
+import java.util.ArrayList;
+
+public class Monk extends Magic {
     private int mana;
     private int healVal;
     private int healPrice;
 
 
     public Monk(String name, int x, int y) {
-        super(name, 60, 40, 25, 20, 40, "nothing", 40,
+        super(name, 1,60,7, 40, 25, 20, 40, "nothing", 40,
                 "Монах", x, y);
     }
 
@@ -26,4 +30,8 @@ public class Monk extends Person {
         return 0;
     }
 
+    @Override
+    public void step(ArrayList<Person> enemies) {
+
+    }
 }
